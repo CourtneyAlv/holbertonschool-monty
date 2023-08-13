@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			fprintf(stderr, "L%u: unknown instructions %s\n", line_number, opcode);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
 			fclose(file);
 			free_stack(&stack);
 			return (EXIT_FAILURE);
