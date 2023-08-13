@@ -10,7 +10,6 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	char buffer[1024];
 	unsigned int line_number = 0;
-	char *opcode = strtok(buffer, " \t\n");
 
 	if (argc != 2)
 	{
@@ -27,6 +26,8 @@ int main(int argc, char *argv[])
 	while (fgets(buffer, sizeof(buffer), file) != NULL)
 	{
 		line_number++;
+		char *opcode = strtok(buffer, " \t\n");
+
 		if (opcode == NULL || opcode[0] == '#')
 			continue;
 		if (strcmp(opcode, "push") == 0)
